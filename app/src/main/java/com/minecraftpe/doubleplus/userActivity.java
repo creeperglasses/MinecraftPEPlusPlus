@@ -4,11 +4,7 @@ package com.minecraftpe.doubleplus;
 import android.app.*;
 import android.os.*;
 import android.view.*;
-import android.content.*;
-import android.webkit.*;
 import android.support.v4.widget.*;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.support.v7.app.*;
 import android.support.v7.widget.*;
 import android.net.*;
@@ -16,6 +12,7 @@ import android.support.design.widget.*;
 import android.graphics.*;
 import android.widget.ImageView;
 import java.io.*;
+import android.content.*;
 
 public class userActivity extends AppCompatActivity
 {

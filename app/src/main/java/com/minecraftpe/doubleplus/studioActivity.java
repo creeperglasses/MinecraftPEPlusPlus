@@ -4,10 +4,7 @@ import android.app.*;
 import android.os.*;
 import android.view.*;
 import android.content.*;
-import android.webkit.*;
 import android.support.v4.widget.*;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.support.v7.app.*;
 import android.support.v7.widget.*;
 import android.support.design.widget.*;
@@ -22,7 +19,6 @@ public class studioActivity extends AppCompatActivity
 
 	/** Called when the activity is first created. */
 	long mExitTime;
-	private SwipeRefreshLayout mSwipeLayout;
 	@Override
     public void onCreate(Bundle savedInstanceState)
 	{
@@ -81,7 +77,7 @@ public class studioActivity extends AppCompatActivity
 							
 							break;		
 						case R.id.about:
-							Intent intentabout = new Intent(studioActivity.this,aboutActivity.class);
+							Intent intentabout = new Intent(studioActivity.this,aboutusActivity.class);
 							startActivity(intentabout);	
 							
 							break;

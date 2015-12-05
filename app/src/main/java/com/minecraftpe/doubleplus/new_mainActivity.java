@@ -101,7 +101,7 @@ public class new_mainActivity extends AppCompatActivity
 							startActivity(intentcheck);	
 							break;	
 						case R.id.about:
-							Intent intentabout = new Intent(new_mainActivity.this,aboutActivity.class);
+							Intent intentabout = new Intent(new_mainActivity.this,aboutusActivity.class);
 							startActivity(intentabout);	
 							
 							break;		

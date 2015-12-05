@@ -137,6 +137,14 @@
 			android:theme="@style/user_settingsActivityTheme"
 			android:windowSoftInputMode="stateHidden|adjustResize">
 		</activity>
+		<activity
+
+            android:label="@string/app_name"
+            android:name=".aboutusActivity"
+			android:screenOrientation="portrait"
+			android:theme="@style/user_settingsActivityTheme"
+			android:windowSoftInputMode="stateHidden|adjustResize">
+		</activity>
     </application>
 	
 	
