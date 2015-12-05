@@ -60,7 +60,7 @@
 					android:title="使用条款"/>
 				<item
 					android:id="@+id/ret"
-					android:icon="@drawable/retp"
+					android:icon="@drawable/rept"
 					android:title="反馈"/>
 			</menu>
 
