@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+
+<style type="text/css">    
+  @font-face {
+    font-family: google;
+    src:url('fonts/google.ttf')
+	}
+	 @font-face {
+	font-family: rhino;
+	src:url('fonts/rhino.ttf')
+}
+h2,h1，ul,li,div,h3,h4,a {font-family: rhino, serif;color:#212121;}
+p{font-family: rhino, serif;color:#212121;}
+
+#srt{serif;font-size:8px;}
+
+.bk{
+border: 8px solid #6;padding: 4px 8px;
+
+-webkit-box-shadow: #444 0px 0px 2px;
+-moz-box-shadow: #444 0px 0px 2px;
+box-shadow: #444 0px 0px 2px;
+background: #a0b3d6;behavior: url(/PIE.htc);
+}
+.bs{
+border: 16px solid #6;padding: 8px 8px;
+
+-webkit-box-shadow: #444 0px 0px 2px;
+-moz-box-shadow: #444 0px 0px 2px;
+box-shadow: #444 0px 0px 2px;
+background: #a0b3d6;behavior: url(/PIE.htc);
+}
+　　#roundpic{ margin:10px auto} 
+　　#roundpic img{ border-radius:50%}
+　 #roundpic1{ margin:10px auto} 
+　　#roundpic1 img{ border-radius:50%}
+
+</style>
+
+<script type="text/javascript">
+function openShutManager(oSourceObj,oTargetObj,shutAble,oOpenTip,oShutTip){
+var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+var openTip = oOpenTip || "";
+var shutTip = oShutTip || "";
+
+if(targetObj.style.display!="none"){
+   if(shutAble) return;
+   targetObj.style.display="none";
+   if(openTip  &&  shutTip){
+    sourceObj.innerHTML = shutTip; 
+   }
+} else {
+   targetObj.style.display="block";
+   if(openTip  &&  shutTip){
+    sourceObj.innerHTML = openTip; 
+   }
+}
+}
+	  </script>
+	  
+
+
+
+  </head>
+  <body>
+	<body bgcolor=#EEEEEE>
+	  <div id="roundpic" class="bk" style="background-color:#fafafa;text-indent:0.5em;" onclick="openShutManager(this,'map1',false)">
+		
+		<table>
+		  <tr>
+			<td>
+			  <div class="bs" style="background:url(demo1.png);height:60px;width:60px;border-radius:50%;text-indent:0.5em;">
+				</div>
+		  </td>
+		  <td>
+			<h1>Test</h1>
+		  </td>
+		  </tr>
+	  </table>
+		
+	  </div>
+	  
+	  <div id="map1" style="background-color:#fafafa;display:none" class="bk">
+		<p>Hello World!Welcome back,Creeper!</p>
+		<p>Hello World!Welcome back,Creeper!</p>
+		<p>Hello World!Welcome back,Creeper!</p>
+		<p>Hello World!Welcome back,Creeper!</p>
+		<p>Hello World!Welcome back,Creeper!</p>
+	  </div>
+	  <p id="srt"> </p>
+	  <div id="roundpic1" class="bk" style="background-color:#fafafa;text-indent:0.5em;" onclick="openShutManager(this,'map2',false)">
+		
+		<table>
+
+		  <tr>
+
+			<td>
+			  <div class="bs" style="background:url(demo1.png);height:60px;width:60px;border-radius:50%;text-indent:0.5em;">
+				</div>
+		  </td>
+		  <td>
+			<h1>测试</h1>
+		  </td>
+		  </tr>
+	  </table>
+		
+	  </div>
+	    <div id="map2" style="background-color:#fafafa;display:none" class="bk">
+		<p>你好，世界!欢迎回来，苦力怕!</p>
+		<p>你好，世界!欢迎回来，苦力怕!</p>
+		<p>你好，世界!欢迎回来，苦力怕!</p>
+		<p>你好，世界!欢迎回来，苦力怕!</p>
+		<p>你好，世界!欢迎回来，苦力怕!</p>
+	  </div>
+  </body>

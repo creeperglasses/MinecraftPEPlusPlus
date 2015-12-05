@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<android.support.design.widget.TextInputLayout
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:textColor="#757575"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/input">
+
+			</EditText>
+
+		</android.support.design.widget.TextInputLayout>
+
+		<android.support.design.widget.FloatingActionButton
+			android:id="@+id/fab"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/done"
+			app:fabSize="mini"
+			app:borderWidth="0dp"
+			android:onClick="res"
+			android:layout_margin="@dimen/codelab_fab_margin_right"
+			android:layout_gravity="bottom|right"
+			/>
+
+	</LinearLayout>
+
+</FrameLayout>
+

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	
+	android:background="@color/checkbg"
+	tools:context=".checkActivity">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		
+		android:layout_height="wrap_content">
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_height="56dp"
+			android:layout_width="match_parent"
+			android:elevation="5dp"
+			android:background="@color/toolbarcolor"
+			app:layout_scrollFlags="scroll|enterAlways">
+
+		</android.support.v7.widget.Toolbar>
+	
+		
+	</android.support.design.widget.AppBarLayout>
+</android.support.design.widget.CoordinatorLayout>
+	<android.support.v4.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_marginTop="56dp"
+		android:layout_height="match_parent"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="基本信息"
+				android:textSize="16dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="12dp"
+				android:layout_width="wrap_content"
+				android:textColor="#757575"
+				android:textStyle="bold"
+				android:layout_marginBottom="12dp"/>
+
+			<EditText
+				android:hint=" 作品名称"
+				android:id="@+id/name"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+			<EditText
+				android:hint=" 作品类型"
+				android:id="@+id/type"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+			<EditText
+				android:hint=" 作品作者"
+				android:id="@+id/who"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp"
+				android:layout_weight="1.0"	>
+
+			</EditText>
+
+			<EditText
+				android:hint=" 作品介绍"
+				android:id="@+id/ind"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+			<EditText
+				android:hint=" 作品链接"
+				android:id="@+id/iurl"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+			</EditText>
+			<EditText
+				android:hint=" 图片链接"
+				android:id="@+id/picurl"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+			</EditText>
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="作者信息"
+				android:textSize="16dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="12dp"
+				android:layout_width="wrap_content"
+				android:textColor="#757575"
+				android:textStyle="bold"
+				android:layout_marginBottom="12dp"/>
+
+			<EditText
+				android:hint=" 是否原创"
+				android:id="@+id/byt"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+
+			<EditText
+				android:hint=" 原作者"
+				android:id="@+id/byw"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+			 	android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+
+			<EditText
+				android:hint=" 同意声明链接"
+				android:id="@+id/byurl"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="工作室信息"
+				android:textSize="16dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="12dp"
+				android:layout_width="wrap_content"
+				android:textColor="#757575"
+				android:textStyle="bold"
+				android:layout_marginBottom="12dp"/>
+
+			<EditText
+				android:hint=" 是否代表工作室"
+				android:id="@+id/styn"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+
+			<EditText
+				android:hint=" 所属工作室"
+				android:id="@+id/stw"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+
+			<EditText
+				android:hint=" 工作室logo链接"
+				android:id="@+id/sturl"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="自定义"
+				android:textSize="16dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="12dp"
+				android:layout_width="wrap_content"
+				android:textColor="#757575"
+				android:textStyle="bold"
+				android:layout_marginBottom="12dp"/>
+
+			<EditText
+				android:hint=" 链接/外部链接"
+				android:id="@+id/lurl"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="作品上传者信息"
+				android:textSize="16dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="12dp"
+				android:layout_width="wrap_content"
+				android:textColor="#757575"
+				android:textStyle="bold"
+				android:layout_marginBottom="12dp"/>
+
+			<EditText
+				android:hint=" 作品上传者"
+				android:id="@+id/wiu"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+			<EditText
+				android:hint=" 审核结果是否提醒"
+				android:id="@+id/retyn"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>	
+		</LinearLayout>
+
+	</android.support.v4.widget.NestedScrollView>
+	<android.support.design.widget.CoordinatorLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+	
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fab_sent"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/fab_send"
+		app:backgroundTint="#8BC34A"
+		app:borderWidth="0dp"
+		android:layout_margin="@dimen/codelab_fab_margin_right"
+		
+		android:layout_gravity="bottom|right"
+		android:onClick="send"/>
+
+	</android.support.design.widget.CoordinatorLayout>
+	
+</FrameLayout>

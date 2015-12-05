@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+	<item
+        android:id="@+id/search"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+		android:title="搜索"
+        android:icon="@drawable/search_new"
+	/>
+    <item
+        android:id="@+id/file"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+		android:title="文件"
+        android:icon="@drawable/file"
+	/>
+
+
+</menu>

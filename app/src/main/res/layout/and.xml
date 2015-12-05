@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/bgcolor">
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_height="56dp"
+		android:layout_width="match_parent"
+		android:elevation="5dp"
+		android:clipToPadding="true"
+		android:fitsSystemWindows="true"
+		android:background="@color/toolbarcolor"
+		android:textColor="#FFFFFF">
+
+	</android.support.v7.widget.Toolbar>
+
+	<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:layout_marginTop="56dp">
+
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:orientation="vertical"
+				>
+<!--
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:background="#3F51B5">
+
+					<EditText
+						
+						android:hint="Search 'M++ Plugin＆Apps'"
+						android:layout_marginLeft="10dp"
+						android:layout_width="wrap_content"
+						android:layout_weight="1.0"
+						android:layout_height="40dp"
+						android:inputType="textFilter"
+						android:background="#3F51B5">
+
+					</EditText>
+
+					<Button
+						android:layout_height="40dp"
+						android:background="@drawable/search"
+						android:layout_width="40dp"
+						android:layout_marginRight="8dp"/>
+
+				</LinearLayout>
+-->
+				<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/swipe_and"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent" >
+
+					<ScrollView
+						xmlns:android="http://schemas.android.com/apk/res/android"
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:orientation="vertical">
+					
+				<WebView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:id="@+id/and_web"/>
+					</ScrollView>
+				</android.support.v4.widget.SwipeRefreshLayout>
+			</LinearLayout>	
+</LinearLayout>
+</FrameLayout>

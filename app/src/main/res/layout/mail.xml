@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="#EEEEEE"
+	android:layout_marginTop="56dp">
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:background="#EEEEEE">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:background="#EEEEEE">
+
+			<EditText
+				android:hint=" 收件邮箱"
+				android:id="@+id/to"
+				android:windowSoftInputMode="stateHidden|adjustResize"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:inputType="textFilter"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+
+			<EditText
+				android:id="@+id/subject"
+				android:hint=" 主题"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:inputType="textFilter"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp">
+
+			</EditText>
+
+			<EditText
+				android:id="@+id/body"
+				android:hint="\n 内容"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="textFilter|textMultiLine"
+				android:background="#EEEEEE"
+				android:layout_marginTop="2dp"
+				android:layout_weight="1.0">
+
+			</EditText>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="horizontal"
+		android:gravity="bottom|right">
+
+		<Button
+			android:layout_height="64dp"
+			android:layout_width="64dp"
+			android:textColor="#757575"
+			android:textSize="36dp"
+			android:background="@drawable/fab_send"
+			android:layout_marginRight="16dp"
+			android:layout_marginBottom="8dp"
+			android:id="@+id/fab_send"/>
+
+	</LinearLayout>
+
+</FrameLayout>
+

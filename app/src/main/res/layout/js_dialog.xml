@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_margin="8dp">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text=" 调用方法"
+		android:layout_width="match_parent"
+		android:textSize="18sp"
+		android:id="@+id/memt"/>
+
+	<EditText
+		android:layout_height="wrap_content"
+		android:ems="10"
+		android:layout_width="match_parent"
+		android:layout_below="@id/memt"
+		android:id="@+id/mem"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text=" 添加参数"
+		android:id="@+id/datt"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/mem"
+		android:textSize="18sp"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_below="@id/datt"
+		android:orientation="horizontal">
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:id="@+id/dat"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="+"
+			android:id="@+id/addi"
+			android:layout_width="wrap_content"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
+

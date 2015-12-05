@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="200dp"
+	android:orientation="vertical"
+	android:onClick="login">
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scaleType="centerCrop"
+		android:src="@drawable/drawerbg"
+		android:id="@+id/utbg"/>
+	
+	<com.minecraftpe.doubleplus.CircularImageView
+		android:layout_width="64dp"
+		android:layout_height="64dp"
+		android:scaleType="centerInside"
+		android:src="@drawable/user"
+		app:border="true"
+		app:border_color="#EEEEEE"
+		app:border_width="0dp"
+		app:shadow="true"
+		android:layout_margin="16dp"
+		app:shadow_radius="2.5"
+		app:shadow_color="#9E9E9E"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|left"
+		android:layout_margin="16dp"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="未登录"
+			android:textSize="16sp"
+			android:textColor="#FAFAFA"
+			android:id="@+id/user_show"
+			android:shadowColor="#BDBDBD"
+			android:layout_marginTop="4dp"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="点击登陆/设置用户信息"
+			android:textSize="12sp"
+			android:textColor="#EEEEEE"
+			android:id="@+id/user_show"
+			android:shadowColor="#BDBDBD"
+			android:layout_marginTop="2dp"/>
+
+	</LinearLayout>
+
+</FrameLayout>
+

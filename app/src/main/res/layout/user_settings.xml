@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="#EEEEEE">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:background="#EEEEEE">
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_marginLeft="0dip"
+			android:layout_marginRight="0dip"
+			android:layout_marginTop="56dp"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="220dp"
+			android:orientation="vertical"
+			android:background="@drawable/userbgmd"
+			android:onClick="start_login_act">
+
+			<ImageView
+				android:layout_width="100dp"
+				android:layout_height="100dp"
+				android:layout_marginLeft="0dp"
+				android:layout_marginTop="8dp"
+				android:scaleType="centerCrop"
+				android:background="@drawable/user"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="8dp"
+				android:text="未登录"
+				android:textSize="18dp"
+				android:textColor="#FAFAFA"
+				android:layout_marginTop="65dp"
+				android:id="@+id/user_show"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="用户"
+			android:textSize="16dp"
+			android:layout_marginLeft="8dp"
+			android:layout_marginTop="12dp"
+			android:layout_width="wrap_content"
+			android:textColor="#757575"
+			android:textStyle="bold"/>
+
+		<com.minecraftpe.doubleplus.MaterialLayout 
+			xmlns:app="http://schemas.android.com/apk/res/com.minecraftpe.doubleplus"
+			android:id="@+id/layout"
+			android:layout_width="fill_parent"
+			android:layout_height="72dp"
+			android:layout_marginTop="12dp"
+			android:gravity="center"
+			app:duration="200"
+			app:alpha="200"
+			app:scale="1.2"
+			app:color="#9E9E9E" >
+			
+			<Button
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="#F5F5F5"
+				android:id="@+id/mie"/>
+
+			<Button
+				android:layout_height="48dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="13dp"
+				android:layout_width="48dp"
+				android:background="@drawable/fac"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="我"
+				android:layout_marginLeft="72dp"
+				android:layout_marginTop="24dp"
+				android:textSize="20dp"
+				android:layout_width="wrap_content"
+				android:textColor="#9E9E9E"/>
+
+		</com.minecraftpe.doubleplus.MaterialLayout>
+		<com.minecraftpe.doubleplus.MaterialLayout 
+			xmlns:app="http://schemas.android.com/apk/res/com.minecraftpe.doubleplus"
+			android:id="@+id/layout"
+			android:layout_width="fill_parent"
+			android:layout_height="72dp"
+			android:layout_marginTop="2px"
+			android:gravity="center"
+			app:duration="200"
+			app:alpha="200"
+			app:scale="1.2"
+			app:color="#9E9E9E" >
+			<Button
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="#F5F5F5"
+				android:id="@+id/mygro"
+				android:onClick="start_sto_act"	/>
+
+			<Button
+				android:layout_height="48dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="13dp"
+				android:layout_width="48dp"
+				android:background="@drawable/mg2"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="团队"
+				android:layout_marginLeft="72dp"
+				android:layout_marginTop="24dp"
+				android:textSize="20dp"
+				android:layout_width="wrap_content"
+				android:textColor="#9E9E9E"/>
+
+		</com.minecraftpe.doubleplus.MaterialLayout>
+
+		<com.minecraftpe.doubleplus.MaterialLayout 
+			xmlns:app="http://schemas.android.com/apk/res/com.minecraftpe.doubleplus"
+			android:id="@+id/layout"
+			android:layout_width="fill_parent"
+			android:layout_height="72dp"
+			android:layout_marginTop="2px"
+			android:gravity="center"
+			app:duration="200"
+			app:alpha="200"
+			app:scale="1.2"
+			app:color="#9E9E9E" >
+			<Button
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="#F5F5F5"
+				android:id="@+id/myf"/>
+
+			<Button
+				android:layout_height="48dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="13dp"
+				android:layout_width="48dp"
+				android:background="@drawable/down"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="我的下载"
+				android:layout_marginLeft="72dp"
+				android:layout_marginTop="24dp"
+				android:textSize="20dp"
+				android:layout_width="wrap_content"
+				android:textColor="#9E9E9E"/>
+
+		</com.minecraftpe.doubleplus.MaterialLayout>
+
+		<com.minecraftpe.doubleplus.MaterialLayout 
+			xmlns:app="http://schemas.android.com/apk/res/com.minecraftpe.doubleplus"
+			android:id="@+id/layout"
+			android:layout_width="fill_parent"
+			android:layout_height="72dp"
+			android:layout_marginTop="2px"
+			android:gravity="center"
+			app:duration="200"
+			app:alpha="200"
+			app:scale="1.2"
+			app:color="#9E9E9E" >
+			<Button
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="#F5F5F5"
+				android:id="@+id/tool"
+				android:onClick="start_tool_act"/>
+
+			<Button
+				android:layout_height="48dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="13dp"
+				android:layout_width="48dp"
+				android:background="@drawable/tool"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="小工具"
+				android:layout_marginLeft="72dp"
+				android:layout_marginTop="24dp"
+				android:textSize="20dp"
+				android:layout_width="wrap_content"
+				android:textColor="#9E9E9E"/>
+
+		</com.minecraftpe.doubleplus.MaterialLayout>
+
+		<com.minecraftpe.doubleplus.MaterialLayout 
+			xmlns:app="http://schemas.android.com/apk/res/com.minecraftpe.doubleplus"
+			android:id="@+id/layout"
+			android:layout_width="fill_parent"
+			android:layout_height="72dp"
+			android:layout_marginTop="2px"
+			android:gravity="center"
+			app:duration="200"
+			app:alpha="200"
+			app:scale="1.2"
+			app:color="#9E9E9E" >
+			
+			<Button
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="#F5F5F5"
+				android:id="@+id/check"
+				android:onClick="start_check_act"/>
+
+			<Button
+				android:layout_height="48dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="13dp"
+				android:layout_width="48dp"
+				android:background="@drawable/check"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="作品审核"
+				android:layout_marginLeft="72dp"
+				android:layout_marginTop="24dp"
+				android:textSize="20dp"
+				android:layout_width="wrap_content"
+				android:textColor="#9E9E9E"/>
+
+		</com.minecraftpe.doubleplus.MaterialLayout>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="应用信息"
+			android:textSize="16dp"
+			android:layout_marginLeft="8dp"
+			android:layout_marginTop="12dp"
+			android:layout_width="wrap_content"
+			android:textColor="#757575"
+			android:textStyle="bold"/>
+
+		<com.minecraftpe.doubleplus.MaterialLayout 
+			xmlns:app="http://schemas.android.com/apk/res/com.minecraftpe.doubleplus"
+			android:id="@+id/layout"
+			android:layout_width="fill_parent"
+			android:layout_height="72dp"
+			android:layout_marginTop="12dp"
+			android:gravity="center"
+			app:duration="200"
+			app:alpha="200"
+			app:scale="1.2"
+			app:color="#9E9E9E" >
+			
+			<Button
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="#F5F5F5"
+				android:id="@+id/abt"
+				android:onClick="start_about_act"/>
+
+			<Button
+				android:layout_height="48dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="13dp"
+				android:layout_width="48dp"
+				android:background="@drawable/and"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="状态"
+				android:layout_marginLeft="72dp"
+				android:layout_marginTop="24dp"
+				android:textSize="20dp"
+				android:layout_width="wrap_content"
+				android:textColor="#9E9E9E"/>
+
+		</com.minecraftpe.doubleplus.MaterialLayout>
+		<com.minecraftpe.doubleplus.MaterialLayout 
+			xmlns:app="http://schemas.android.com/apk/res/com.minecraftpe.doubleplus"
+			android:id="@+id/layout"
+			android:layout_width="fill_parent"
+			android:layout_height="72dp"
+			android:layout_marginTop="2px"
+			android:gravity="center"
+			app:duration="200"
+			app:alpha="200"
+			app:scale="1.2"
+			app:color="#9E9E9E" >
+			<Button
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="#F5F5F5"
+				android:id="@+id/setting"
+				android:onClick="start_setting_act"/>
+
+			<Button
+				android:layout_height="48dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="13dp"
+				android:layout_width="48dp"
+				android:background="@drawable/set"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="操作"
+				android:layout_marginLeft="72dp"
+				android:layout_marginTop="24dp"
+				android:textSize="20dp"
+				android:layout_width="wrap_content"
+				android:textColor="#9E9E9E"/>
+
+		</com.minecraftpe.doubleplus.MaterialLayout>
+
+	</LinearLayout>
+
+</ScrollView>
+

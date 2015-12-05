@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="#EEEEEE">
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:background="#EEEEEE">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:background="#EEEEEE">
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_marginLeft="0dip"
+				android:layout_marginRight="0dip"
+				android:layout_marginTop="56dp"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="220dp"
+				android:background="@drawable/mailbg"
+				android:orientation="vertical"
+				android:gravity="center">
+
+				<ImageView
+					android:layout_width="80dp"
+					android:layout_height="80dp"
+					android:scaleType="centerCrop"
+					android:background="@drawable/user_mail"/>
+
+				<TextView
+					android:layout_marginTop="10dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="添加用户邮箱"
+					android:textSize="15dp"
+					android:textColor="#FAFAFA"/>
+
+			</LinearLayout>
+
+			<EditText
+				android:hint=" 邮箱"
+				android:windowSoftInputMode="stateHidden|adjustResize"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:inputType="textFilter"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp"
+				android:id="@+id/user_mail">
+
+			</EditText>
+
+			<EditText
+				android:hint=" 密码"
+				android:textColor="#757575"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:inputType="textFilter"
+				android:background="#F5F5F5"
+				android:layout_marginTop="2dp"
+				android:id="@+id/mail_pwd">
+
+			</EditText>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal"
+		android:gravity="bottom|right">
+
+		<Button
+			android:layout_height="64dp"
+			android:layout_width="64dp"
+			android:text="+"
+			android:textColor="#757575"
+			android:textSize="36dp"
+			android:background="@drawable/fab"
+			android:layout_marginRight="16dp"
+			android:layout_marginBottom="8dp"
+			android:id="@+id/mail_add"/>
+
+	</LinearLayout>
+
+</FrameLayout>
+

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:fitsSystemWindows="true"
+	android:orientation="vertical"
+	android:background="@color/bgcolor">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="fill_parent"
+		android:fitsSystemWindows="true"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="220dp"
+			android:fitsSystemWindows="true"
+			android:background="@drawable/userbgmd"
+			android:orientation="vertical"
+			android:elevation="5dp"
+			android:gravity="center">
+
+			<ImageView
+				android:layout_width="80dp"
+				android:layout_height="80dp"
+				android:fitsSystemWindows="true"
+				android:scaleType="centerCrop"
+				android:background="@drawable/icon"/>
+
+			<TextView
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="登陆/用户注册"
+				android:textSize="15dp"
+				android:textColor="#FAFAFA"/>
+
+		</LinearLayout>
+		<android.support.design.widget.TextInputLayout
+			android:layout_width="match_parent"
+			android:layout_marginTop="8dp"
+			android:layout_height="wrap_content">
+		<EditText
+			android:hint=" 用户名/新用户"
+			android:windowSoftInputMode="stateHidden|adjustResize"
+			android:textColor="#757575"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:id="@+id/name">
+
+		</EditText>
+		</android.support.design.widget.TextInputLayout>
+		<android.support.design.widget.TextInputLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+		
+		<EditText
+			android:hint=" 密码/登陆密码"
+			android:textColor="#757575"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:inputType="textPassword"
+			
+			android:id="@+id/pwd">
+
+		</EditText>
+		</android.support.design.widget.TextInputLayout>
+	</LinearLayout>
+
+	<android.support.design.widget.CoordinatorLayout
+		android:id="@+id/layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<android.support.design.widget.FloatingActionButton
+			android:id="@+id/loginnew"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/add"
+			app:backgroundTint="#8BC34A"
+			app:elevation="6dp"
+			android:translationZ="12dp"
+			android:layout_margin="@dimen/codelab_fab_margin_right"
+			
+			android:layout_gravity="bottom|right"
+			android:onClick="loginadd"/>
+
+	</android.support.design.widget.CoordinatorLayout>
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_height="56dp"
+		android:layout_width="match_parent"
+		android:elevation="0dp"
+		android:textColor="#FFFFFF">
+
+	</android.support.v7.widget.Toolbar>
+
+</FrameLayout>
+
