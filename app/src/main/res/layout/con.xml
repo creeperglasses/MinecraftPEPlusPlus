@@ -7,7 +7,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:translationZ="4dp"
-	card_view:cardCornerRadius="2dp"
+	card_view:cardCornerRadius="4dp"
 	android:background="#FAFAFA"
 	android:layout_margin="32dp">
 
@@ -97,15 +97,58 @@
 							android:layout_width="wrap_content"
 							android:textSize="14sp"
 							android:padding="8dp"
-							android:textColor="#009688"/>
+							android:clickable="true"
+							android:textColor="#009688"
+							android:background="@drawable/con_click"/>
 
 						<TextView
 							android:layout_height="wrap_content"
 							android:text="VIEW"
+							android:clickable="true"
 							android:layout_width="wrap_content"
 							android:textSize="14sp"
 							android:padding="8dp"
-							android:textColor="#009688"/>
+							android:textColor="#009688"
+							android:background="@drawable/con_click"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginBottom="4dp"
+					android:layout_gravity="bottom">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="horizontal"
+						android:gravity="left|center"
+						android:layout_margin="4dp">
+
+						<ImageView
+							android:layout_height="24dp"
+							android:layout_width="24dp"
+							android:src="@drawable/grade"
+							android:id="@+id/gradle"
+							android:clickable="true"
+							android:background="@drawable/con_click"
+							android:layout_marginLeft="8dp"
+							android:layout_gravity="center"/>
+
+						<ImageView
+							android:layout_height="24dp"
+							android:layout_width="24dp"
+							android:src="@drawable/share"
+							android:clickable="true"
+							android:id="@+id/share"
+							android:background="@drawable/con_click"
+							android:layout_marginLeft="16dp"
+							android:layout_gravity="center"
+							android:onClick="to_share"/>
 
 					</LinearLayout>
 

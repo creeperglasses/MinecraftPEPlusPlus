@@ -19,14 +19,13 @@
 	tools:context=".checkActivity">
 	<android.support.design.widget.AppBarLayout
 		android:layout_width="match_parent"
-		
+		android:translationZ="10dp"
 		android:layout_height="wrap_content">
 
 		<android.support.v7.widget.Toolbar
 			android:id="@+id/toolbar"
 			android:layout_height="56dp"
 			android:layout_width="match_parent"
-			android:elevation="5dp"
 			android:background="@color/toolbarcolor"
 			app:layout_scrollFlags="scroll|enterAlways">
 

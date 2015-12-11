@@ -17,6 +17,7 @@ import java.io.*;
 import android.widget.ImageView;
 import org.apache.commons.net.nntp.*;
 import android.widget.Toast;
+import android.util.*;
 
 public class new_mainActivity extends AppCompatActivity
 {
@@ -42,11 +43,19 @@ public class new_mainActivity extends AppCompatActivity
 			window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);// 透明导航栏
 		}*/
         setContentView(R.layout.new_main);
+		initData();
 		File[] files=getCacheDir().listFiles();
 		for(File f:files)
 		{
 			f.delete();
 		}
+		int displayWidth=0;
+		int displayHeight=0;
+		DisplayMetrics displayMetrics = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+		displayWidth = displayMetrics.widthPixels;
+		displayHeight = displayMetrics.heightPixels;
+		final int rpos=displayWidth/320;
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 		toolbar.setTitle("M++");
@@ -140,8 +149,8 @@ public class new_mainActivity extends AppCompatActivity
 			});
 	
 		RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler);
-       	recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
-       initData();
+       	recyclerView.setLayoutManager(new StaggeredGridLayoutManager(rpos,StaggeredGridLayoutManager.VERTICAL));
+       
 		RecycleItemClickListener itemClickListener=new RecycleItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -164,9 +173,10 @@ public class new_mainActivity extends AppCompatActivity
 				@Override
 				public void onRefresh() {
 					//重新刷新页面
-					RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler);
-					recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
 					initData();
+					RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler);
+					recyclerView.setLayoutManager(new StaggeredGridLayoutManager(rpos,StaggeredGridLayoutManager.VERTICAL));
+					
 					recyclerView.setAdapter(adapter);	
 					new Handler().postDelayed(new Runnable() {
 							@Override

@@ -18,6 +18,11 @@ import android.graphics.*;
 import java.io.*;
 import java.net.*;
 import android.widget.TextView;
+import android.support.annotation.*;
+
+import com.cocosw.bottomsheet.BottomSheet;
+import com.cocosw.bottomsheet.BottomSheetHelper;
+import com.cocosw.query.CocoQuery;
 
 public class conActivity extends AppCompatActivity
 {
@@ -30,6 +35,8 @@ public class conActivity extends AppCompatActivity
 	private File fs=new File("/storage/sdcard0/M++/data/fs_con.txt");
 	private Data data=new Data();
 	private String url;
+	private BottomSheet sheet;
+	
 	
 	@Override
     public void onCreate(Bundle savedInstanceState)
@@ -54,6 +61,16 @@ public class conActivity extends AppCompatActivity
 		intro.setText(mtex);
 		loadImage(bg,picurl);
 		
+		}
+	@SuppressWarnings("deprecation")
+    @Nullable
+    @Override
+    protected Dialog onCreateDialog(final int position, Bundle args) {
+		
+		sheet = getShareActions("分享一个不错的资源:"+title.getText().toString()+"\n"+intro.getText().toString()+"\n"+"如果你喜欢，链接在这里"+url).build();
+		sheet.setTitle("分享至...");
+		
+		return sheet;
 		}
 	private final Map<String, Drawable> cache = new HashMap<String, Drawable>();
 
@@ -118,6 +135,7 @@ public class conActivity extends AppCompatActivity
 		return inputStream;
 	}
 	
+	
 	private void StartUrl(Uri uri){
 		Intent intent = new Intent(Intent.ACTION_VIEW,uri);  
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
@@ -127,5 +145,18 @@ public class conActivity extends AppCompatActivity
 	
 		StartUrl(Uri.parse(url));
 	}
+	private BottomSheet.Builder getShareActions(String text) {
+        final Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+
+        return BottomSheetHelper.shareAction(this, shareIntent);
+    }
+public void to_share(View view){
+	
+	showDialog(0);
+	
+}
+
 		}
 		

@@ -7,11 +7,12 @@
 	<color name="blue">#26C6DA</color>
 	<color name="black">#212121</color>
 	<color name="toolbarcolor">#00b8d4</color>
-	<color name="bgcolor">#fafafa</color>
+	<color name="bgcolor">#EEEEEE</color>
 	<color name="checkbg">#EEEEEE</color>
 	<color name="logintit">#1976D2</color>
 	<color name="inputcol">#8BC34A</color>
     <color name="transparent">#0000</color>
+	<color name="clickcol">#BDBDBD</color>
 	
 	
 </resources>

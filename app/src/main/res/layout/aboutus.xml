@@ -13,6 +13,7 @@
 		android:layout_width="match_parent"
 		android:id="@+id/appbar"
 		android:background="@color/holo_blue_bright"
+		android:translationZ="10dp"
 		android:fitsSystemWindows="true"
 		android:layout_height="384dp">
 
@@ -25,24 +26,50 @@
 			android:fitsSystemWindows="true"
 			app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-			
-				<ImageView
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:scaleType="centerCrop"
-					android:fitsSystemWindows="true"
-					android:src="@drawable/testbg"
-					app:layout_collapseMode="parallax"
-					app:layout_collapseParallaxMultiplier="0.7"
-					android:id="@+id/aboutusbg"/>
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="centerCrop"
+				android:fitsSystemWindows="true"
+				android:src="@drawable/testbg"
+				app:layout_collapseMode="parallax"
+				app:layout_collapseParallaxMultiplier="0.7"
+				android:id="@+id/aboutusbg"/>
 
-			
+			<FrameLayout
+				android:layout_width="match_parent"
+				android:padding="16dp"
+				android:layout_height="match_parent">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:orientation="vertical"
+					android:layout_height="wrap_content"
+					android:layout_gravity="bottom|left">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="24sp"
+						android:textColor="#FAFAFA"
+						android:text="M++"/>
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="16sp"
+						android:textColor="#FAFAFA"
+						android:text="MCPE Development"
+						android:layout_marginTop="4dp"/>
+
+				</LinearLayout>
+
+			</FrameLayout>
 
 			<android.support.v7.widget.Toolbar
 				android:id="@+id/toolbar"
 				android:layout_width="match_parent"
 				android:layout_height="56dp"
-				android:translationZ="5dp"
 				app:layout_collapseMode="pin"/>
 
 		</android.support.design.widget.CollapsingToolbarLayout>
@@ -57,10 +84,185 @@
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:orientation="vertical"
-			android:paddingTop="16dp">
+			android:orientation="vertical">
 
-		
+			<android.support.v7.widget.CardView
+				android:layout_width="match_parent"
+				android:layout_height="144dp"
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginLeft="8dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="horizontal">
+
+					<ImageView
+						android:layout_width="108dp"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"
+						android:src="@drawable/encourageus"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_margin="16dp"
+						android:orientation="vertical">
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="M++与我们"
+							android:layout_width="wrap_content"
+							android:textSize="16sp"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="M++是Code UI旗下开发的一个Android应用，是MCPE Development一个重要的项目，点击这里了解更多。"
+							android:layout_width="wrap_content"
+							android:layout_marginTop="4dp"
+							android:textColor="#9E9E9E"
+							android:textSize="14sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:layout_width="match_parent"
+				android:layout_height="144dp"
+				android:layout_marginBottom="4dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginLeft="8dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="horizontal">
+
+					<ImageView
+						android:layout_width="108dp"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"
+						android:src="@drawable/open"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_margin="16dp"
+						android:orientation="vertical">
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="开源项目地址"
+							android:layout_width="wrap_content"
+							android:textSize="16sp"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="我们会努力下去，我们也会坚持开放源代码的原则，如果你想参考，那么随时可以。"
+							android:layout_width="wrap_content"
+							android:layout_marginTop="4dp"
+							android:textColor="#9E9E9E"
+							android:textSize="14sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:layout_width="match_parent"
+				android:layout_height="144dp"
+				android:layout_marginBottom="4dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginLeft="8dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="horizontal">
+
+					<ImageView
+						android:layout_width="108dp"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"
+						android:src="@drawable/user_show"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_margin="16dp"
+						android:orientation="vertical">
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="使用条款"
+							android:layout_width="wrap_content"
+							android:textSize="16sp"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="请务必了解此应用的使用条款，它关系到你的体验，以及使用。如有违反条例，请不要以此为借口。"
+							android:layout_width="wrap_content"
+							android:layout_marginTop="4dp"
+							android:textColor="#9E9E9E"
+							android:textSize="14sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:layout_width="match_parent"
+				android:layout_height="144dp"
+				android:layout_marginBottom="4dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginLeft="8dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="horizontal">
+
+					<ImageView
+						android:layout_width="108dp"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"
+						android:src="@drawable/donate"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_margin="16dp"
+						android:orientation="vertical">
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="捐助我们"
+							android:layout_width="wrap_content"
+							android:textSize="16sp"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="我们为打造完美的用户体验而努力；现在不会有广告，以后也不会有。您的捐助是我们资金的唯一来源。"
+							android:layout_width="wrap_content"
+							android:layout_marginTop="4dp"
+							android:textColor="#9E9E9E"
+							android:textSize="14sp"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
 		</LinearLayout>
 
 	</android.support.v4.widget.NestedScrollView>
@@ -70,11 +272,11 @@
 		android:layout_height="wrap_content"
 		android:layout_margin="16dp"
 		android:clickable="true"
-		app:backgroundTint="#8BC34A"
 		android:src="@drawable/mcpedevelopment"
 		app:borderWidth="0dp"
 		app:layout_anchor="@id/appbar"
-		app:layout_anchorGravity="bottom|right|end"/>
+		app:layout_anchorGravity="bottom|right|end"
+		android:onClick="str_mcdev"/>
 
 </android.support.design.widget.CoordinatorLayout>
 

@@ -44,4 +44,8 @@ public class aboutusActivity extends AppCompatActivity
 		mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
 
 		}
+	public void str_mcdev(View view){	
+		Intent intent = new Intent(aboutusActivity.this,mcdevActivity.class);
+		startActivity(intent);
+	}
 		}

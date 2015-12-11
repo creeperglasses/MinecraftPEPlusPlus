@@ -13,12 +13,11 @@
 				android:layout_width="fill_parent"
 				android:layout_height="fill_parent"
 				android:orientation="vertical"
-				android:clipToPadding="true"
-				>
+				android:fitsSystemWindows="true">
 
 				<WebView
 					android:layout_width="match_parent"
-					android:clipToPadding="true"
+					android:fitsSystemWindows="true"
 					android:layout_height="match_parent"
 					android:id="@+id/user_web"/>
 			
@@ -27,7 +26,6 @@
 	<android.support.v7.widget.Toolbar
 		android:id="@+id/toolbar"
 		android:layout_height="56dp"
-		android:clipToPadding="true"
 		android:layout_width="match_parent"
 		android:elevation="0dp"
 		android:textColor="#FFFFFF">

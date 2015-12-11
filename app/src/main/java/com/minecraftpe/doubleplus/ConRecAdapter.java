@@ -42,7 +42,7 @@ public class ConRecAdapter extends RecyclerView.Adapter<ConRecAdapter.MasonryVie
 		catch(IllegalArgumentException e){
 			
 		}
-		masonryView.bar.getBackground().setAlpha(80);
+		masonryView.bar.getBackground().setAlpha(125);
 		masonryView.textView.setText(products.get(position).getTitle());
 
 		}
