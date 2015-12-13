@@ -4,7 +4,7 @@ import android.content.*;
 
 public class MppFragmentPagerAdapter extends FragmentPagerAdapter {
 	public final int COUNT = 2;
-	private String[] titles = new String[]{"Studio", "Sever"};
+	private String[] titles = new String[]{"新闻", "团队"};
 	private Context context;
 	public MppFragmentPagerAdapter(FragmentManager fm, Context context) {
 		super(fm);

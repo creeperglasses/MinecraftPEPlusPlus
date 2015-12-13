@@ -28,7 +28,7 @@ public class conActivity extends AppCompatActivity
 {
 
 	/** Called when the activity is first created. */
-	private TextView title;
+	private TextView titlemain;
 	private TextView by;
 	private TextView intro;
 	private ImageView bg;
@@ -46,7 +46,7 @@ public class conActivity extends AppCompatActivity
 			getWindow().setStatusBarColor(getResources().getColor(R.color.holo_blue_bright));}
 		setContentView(R.layout.con);
 		bg= (ImageView) findViewById(R.id.con_show );
-		title= (TextView) findViewById(R.id.con_maintitle);
+		titlemain= (TextView) findViewById(R.id.con_maintitle);
 		by= (TextView) findViewById(R.id.con_by);
 		intro= (TextView) findViewById(R.id.con_int);
 		Intent intent= getIntent();
@@ -56,7 +56,7 @@ public class conActivity extends AppCompatActivity
 		String bytex=data.getData(fs,pos*6+3);
 		String mtex=data.getData(fs,pos*6+4);
 		url=data.getData(fs,pos*6+5);
-		title.setText(titletex);
+		titlemain.setText(titletex);
 		by.setText(bytex);
 		intro.setText(mtex);
 		loadImage(bg,picurl);
@@ -67,8 +67,7 @@ public class conActivity extends AppCompatActivity
     @Override
     protected Dialog onCreateDialog(final int position, Bundle args) {
 		
-		sheet = getShareActions("分享一个不错的资源:"+title.getText().toString()+"\n"+intro.getText().toString()+"\n"+"如果你喜欢，链接在这里"+url).build();
-		sheet.setTitle("分享至...");
+		sheet = getShareActions("分享一个不错的资源:"+titlemain.getText().toString()+"\n"+intro.getText().toString()+"\n"+"如果你喜欢，链接在这里"+url).build();
 		
 		return sheet;
 		}
