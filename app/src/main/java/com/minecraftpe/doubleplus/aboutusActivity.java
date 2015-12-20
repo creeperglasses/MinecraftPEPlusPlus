@@ -48,4 +48,28 @@ public class aboutusActivity extends AppCompatActivity
 		Intent intent = new Intent(aboutusActivity.this,mcdevActivity.class);
 		startActivity(intent);
 	}
+	public void togit(View view){
+		StartUrl(Uri.parse("https://git.coding.net/helow/MCPE_Development.git"));
+		
+	}
+	public void toabout(View view){
+		Intent intent = new Intent(aboutusActivity.this,uswebActivity.class);
+		intent.putExtra("type", 1);
+		startActivity(intent);	
+	}
+	public void touser(View view){
+		Intent intent = new Intent(aboutusActivity.this,uswebActivity.class);
+		intent.putExtra("type", 2);
+		startActivity(intent);	
+	}
+	public void todonate(View view){
+		Intent intent = new Intent(aboutusActivity.this,uswebActivity.class);
+		intent.putExtra("type", 3);
+		startActivity(intent);	
+	}
+	private void StartUrl(Uri uri){
+		Intent intent = new Intent(Intent.ACTION_VIEW,uri);  
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
+		startActivity(intent); 
+	}
 		}

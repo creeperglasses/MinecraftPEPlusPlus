@@ -30,7 +30,7 @@ import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 
 public class NewsMain implements OnItemClickListener  {
-	public static final String TAG = "TuTu";
+	public static final String TAG = "MppNews";
 	private ViewPager mViewPager;
 	private TextView mTextView;
 	private LinearLayout mLinearLayout;

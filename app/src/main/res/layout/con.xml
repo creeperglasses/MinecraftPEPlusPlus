@@ -99,7 +99,8 @@
 							android:padding="8dp"
 							android:clickable="true"
 							android:textColor="#009688"
-							android:background="@drawable/con_click"/>
+							android:background="@drawable/con_click"
+							android:onClick="back"/>
 
 						<TextView
 							android:layout_height="wrap_content"
@@ -109,7 +110,8 @@
 							android:textSize="14sp"
 							android:padding="8dp"
 							android:textColor="#009688"
-							android:background="@drawable/con_click"/>
+							android:background="@drawable/con_click"
+							android:onClick="view"/>
 
 					</LinearLayout>
 

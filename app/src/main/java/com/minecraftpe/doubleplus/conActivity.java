@@ -4,10 +4,7 @@ import android.app.*;
 import android.os.*;
 import android.view.*;
 import android.content.*;
-import android.webkit.*;
 import android.support.v4.widget.*;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.support.v7.app.*;
 import android.support.v7.widget.*;
 import android.net.*;
@@ -36,7 +33,7 @@ public class conActivity extends AppCompatActivity
 	private Data data=new Data();
 	private String url;
 	private BottomSheet sheet;
-	
+	private int pos;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState)
@@ -50,7 +47,7 @@ public class conActivity extends AppCompatActivity
 		by= (TextView) findViewById(R.id.con_by);
 		intro= (TextView) findViewById(R.id.con_int);
 		Intent intent= getIntent();
-		int pos = intent.getIntExtra("pos", 0);
+	    pos = intent.getIntExtra("pos", 0);
 		String picurl=data.getData(fs,pos*6+2);
 		String titletex=data.getData(fs,pos*6+1);
 		String bytex=data.getData(fs,pos*6+3);
@@ -156,6 +153,13 @@ public void to_share(View view){
 	showDialog(0);
 	
 }
-
+public void back(View view){
+	finish();
+}
+	public void view(View view){
+		Intent intent = new Intent(conActivity.this,cviewActivity.class);
+		intent.putExtra("titlemain", titlemain.getText().toString());
+		startActivity(intent);	
+	}
 		}
 		

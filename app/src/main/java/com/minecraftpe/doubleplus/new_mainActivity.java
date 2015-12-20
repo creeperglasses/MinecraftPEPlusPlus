@@ -28,7 +28,7 @@ public class new_mainActivity extends AppCompatActivity
 	private long mExitTime;
 	private List<ConRecItem> listmain;
 	private SwipeRefreshLayout mSwipeLayout;
-	
+	public String cpo;
     @Override
     public void onCreate(Bundle savedInstanceState)
 	{
@@ -147,25 +147,62 @@ public class new_mainActivity extends AppCompatActivity
 
 
 			});
-	
-		RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler);
-       	recyclerView.setLayoutManager(new StaggeredGridLayoutManager(rpos,StaggeredGridLayoutManager.VERTICAL));
-       
 		RecycleItemClickListener itemClickListener=new RecycleItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-            switch(position){
-			default:
-					Intent intent = new Intent(new_mainActivity.this,conActivity.class);
-					intent.putExtra("pos", position);
-					startActivity(intent);	
-					break;	
+				switch(position){
+					default:
+						cpo=String.valueOf(position);	
+						System.out.println(cpo);
+						File fp=new File("/storage/sdcard0/M++/data/con_view/pos.txt");
+						if(fp.exists()){
+						fp.delete();	
+						}
+							try
+							{
+								fp.createNewFile();
+								Data data=new Data();
+								data.writeData(fp,cpo,false);
+							}
+							
+							catch (IOException e)
+							{}
+						Intent intent = new Intent(new_mainActivity.this, conActivity.class);
+						intent.putExtra("pos", position);
+						startActivity(intent);	
+						break;	
 				}
-				}
+			}
         };
-		
 		final ConRecAdapter adapter=new ConRecAdapter(listmain,itemClickListener);
-        recyclerView.setAdapter(adapter);
+		RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler);
+		recyclerView.setLayoutManager(new StaggeredGridLayoutManager(rpos,StaggeredGridLayoutManager.VERTICAL));
+		recyclerView.setAdapter(adapter);
+		
+		final Handler load = new Handler();
+
+		final Runnable task = new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				initData();
+				RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler);
+				recyclerView.setLayoutManager(new StaggeredGridLayoutManager(rpos,StaggeredGridLayoutManager.VERTICAL));
+				recyclerView.setAdapter(adapter);
+				load.postDelayed(this, 100000);
+			}};
+		load.postDelayed(task, 10000);
+		final Runnable listload = new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				initData();
+				load.postDelayed(this, 240000);
+				}
+				};
+		load.postDelayed(listload, 17000);
 		
 		mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		mSwipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -173,7 +210,7 @@ public class new_mainActivity extends AppCompatActivity
 				@Override
 				public void onRefresh() {
 					//重新刷新页面
-					initData();
+					
 					RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler);
 					recyclerView.setLayoutManager(new StaggeredGridLayoutManager(rpos,StaggeredGridLayoutManager.VERTICAL));
 					
@@ -335,7 +372,7 @@ new Thread(listadd).start();
 
 			catch (FileNotFoundException e)
 			{
-				e.printStackTrace(); 	
+				//e.printStackTrace(); 	
 			}
 
 			

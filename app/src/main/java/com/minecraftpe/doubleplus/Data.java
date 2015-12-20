@@ -141,5 +141,15 @@ public class Data
 			}
 		 }
 		 }
+	public void writeData(File file,String mes,boolean ifbr) throws FileNotFoundException, IOException{
+		FileOutputStream out_steam = new FileOutputStream(file, true);
+		if(ifbr){
+			mes="\n"+mes;
+		out_steam.write(mes.getBytes("UTF-8"));
+		}
+		else{
+			out_steam.write(mes.getBytes("UTF-8"));
+		}
+	}
 		 }
 

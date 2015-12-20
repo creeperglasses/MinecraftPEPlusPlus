@@ -97,7 +97,10 @@
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
-					android:orientation="horizontal">
+					android:clickable="true"
+					android:background="@drawable/con_click"
+					android:orientation="horizontal"
+					android:onClick="toabout">
 
 					<ImageView
 						android:layout_width="108dp"
@@ -141,7 +144,10 @@
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
-					android:orientation="horizontal">
+					android:clickable="true"
+					android:background="@drawable/con_click"
+					android:orientation="horizontal"
+					android:onClick="togit">
 
 					<ImageView
 						android:layout_width="108dp"
@@ -185,7 +191,10 @@
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
-					android:orientation="horizontal">
+					android:clickable="true"
+					android:background="@drawable/con_click"
+					android:orientation="horizontal"
+					android:onClick="touser">
 
 					<ImageView
 						android:layout_width="108dp"
@@ -229,7 +238,10 @@
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
-					android:orientation="horizontal">
+					android:clickable="true"
+					android:background="@drawable/con_click"
+					android:orientation="horizontal"
+					android:onClick="todonate">
 
 					<ImageView
 						android:layout_width="108dp"
