@@ -71,7 +71,6 @@
 		android:layout_height="wrap_content"
 		android:layout_margin="16dp"
 		android:clickable="true"
-		app:backgroundTint="#8BC34A"
 		android:src="@drawable/edit"
 		app:borderWidth="0dp"
 		app:layout_anchor="@id/appbar"

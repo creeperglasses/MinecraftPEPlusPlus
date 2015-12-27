@@ -92,23 +92,14 @@ public class studioActivity extends AppCompatActivity
 							
 							finish();
 							break;
-						case R.id.check:
-							Intent intentcheck = new Intent(studioActivity.this,checkActivity.class);
-							startActivity(intentcheck);
-							
-							break;		
+								
 						case R.id.about:
 							Intent intentabout = new Intent(studioActivity.this,aboutusActivity.class);
 							startActivity(intentabout);	
 							
-							break;
-						case R.id.look:
-							Intent intentlook = new Intent(studioActivity.this,mpp_user_showActivity.class);
-							startActivity(intentlook);
-							
-							break;				
+							break;	
 					case R.id.tool:
-							Intent intenttool = new Intent(studioActivity.this,jsentActivity.class);
+							Intent intenttool = new Intent(studioActivity.this,codeActivity.class);
 							startActivity(intenttool);	
 							
 							break;	
@@ -123,7 +114,20 @@ public class studioActivity extends AppCompatActivity
 							String it="2";
 							intentret.putExtra("inputtype", it);	
 							startActivity(intentret);		
-							break;		
+							break;
+							case R.id.mcmanager:
+							Intent intentmana = new Intent(studioActivity.this,mc_managerActivity.class);
+							startActivity(intentmana);
+
+							break;	
+	
+					case R.id.loadjs:
+							Intent intentloadjs = new Intent(studioActivity.this,loadjsActivity.class);
+							startActivity(intentloadjs);
+
+							break;	
+			
+	
 							default:
 							
 							break;

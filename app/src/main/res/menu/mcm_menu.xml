@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+  
+    <item
+        android:id="@+id/remake"
+		android:title="整理"
+		app:showAsAction="ifRoom"
+        android:icon="@drawable/text_remake"
+	/>
+</menu>

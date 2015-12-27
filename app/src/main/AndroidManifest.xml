@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.minecraftpe.doubleplus"
-    android:versionCode="1"
-    android:versionName="Beta 4P" >
+    android:versionCode="1">
 	
     <uses-sdk 
         android:minSdkVersion="14" 
@@ -163,6 +162,34 @@
             android:name=".cviewActivity"
 			android:theme="@style/user_settingsActivityTheme"
 			android:windowSoftInputMode="stateHidden|adjustResize">
+		</activity>
+		<activity
+
+            android:label="@string/app_name"
+            android:name=".cviewActivity"
+			android:theme="@style/user_settingsActivityTheme"
+			android:windowSoftInputMode="stateHidden|adjustResize">
+		</activity>
+		<activity
+
+            android:label="@string/app_name"
+            android:name=".mc_managerActivity"
+			android:theme="@style/new_mainActivityTheme"
+			android:windowSoftInputMode="stateHidden|adjustResize">
+		</activity>
+		<activity
+
+            android:label="@string/app_name"
+            android:name=".codeActivity"
+			android:theme="@style/new_mainActivityTheme"
+			android:windowSoftInputMode="stateHidden|adjustResize"	>
+		</activity>
+		<activity
+
+            android:label="@string/app_name"
+            android:name=".loadjsActivity"
+			android:theme="@style/new_mainActivityTheme"
+			android:windowSoftInputMode="stateHidden|adjustResize"	>
 		</activity>
     </application>
 	

@@ -57,11 +57,7 @@ public class new_mainActivity extends AppCompatActivity
 		displayHeight = displayMetrics.heightPixels;
 		final int rpos=displayWidth/320;
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-		toolbar.setTitle("M++");
 		toolbar.setNavigationIcon(R.drawable.list);
-		toolbar.setTitleTextColor(0xffffffff);
-		toolbar.setSubtitleTextColor(0xffffffff);
 		CollapsingToolbarLayout mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout);		
 		mCollapsingToolbarLayout.setTitle("M++");
 		mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);//设置还没收缩时状态下字体颜色
@@ -105,23 +101,15 @@ public class new_mainActivity extends AppCompatActivity
 							
 							finish();
 							break;
-						case R.id.check:
-							Intent intentcheck = new Intent(new_mainActivity.this,checkActivity.class);
-							startActivity(intentcheck);	
-							break;	
+						
 						case R.id.about:
 							Intent intentabout = new Intent(new_mainActivity.this,aboutusActivity.class);
 							startActivity(intentabout);	
 							
 							break;		
-						case R.id.look:
-							Intent intentlook = new Intent(new_mainActivity.this,mpp_user_showActivity.class);
-							startActivity(intentlook);
-							
-							
-							break;		
+						
 							case R.id.tool:
-							Intent intenttool = new Intent(new_mainActivity.this,jsentActivity.class);
+							Intent intenttool = new Intent(new_mainActivity.this,codeActivity.class);
 							startActivity(intenttool);
 							
 							break;	
@@ -135,7 +123,18 @@ public class new_mainActivity extends AppCompatActivity
 							String it="2";
 							intentret.putExtra("inputtype", it);	
 							startActivity(intentret);		
-							break;		
+							break;	
+						case R.id.mcmanager:
+							Intent intentmana = new Intent(new_mainActivity.this,mc_managerActivity.class);
+							startActivity(intentmana);
+
+							break;	
+						case R.id.loadjs:
+							Intent intentloadjs = new Intent(new_mainActivity.this,loadjsActivity.class);
+							startActivity(intentloadjs);
+
+							break;	
+							
 						default:
 						
 							break;

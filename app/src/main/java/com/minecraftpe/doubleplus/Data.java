@@ -1,12 +1,5 @@
 package com.minecraftpe.doubleplus;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.*;
-import android.text.*;
 
 public class Data
 {
@@ -42,6 +35,43 @@ public class Data
 		}
 		return output;
 	}
+	public String getAllData(File file){
+		String output="";
+		try
+		{
+			FileReader fr=new FileReader(file);
+
+			BufferedReader br=new BufferedReader(fr);
+
+			String temp=null;
+			String s="";
+			try{
+				while ((temp = br.readLine()) != null)
+				{
+					s += temp + "\n";
+				}
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace(); 	
+			}
+			String [] ss=s.split("\n");
+			for (int i = 0; i < ss.length; i++) {
+				if(i==0){
+					output=ss[i];
+				}
+				else{
+				output=output+"\n"+ss[i];
+				}
+			}
+		}
+		catch (FileNotFoundException e)
+		{
+			e.printStackTrace(); 	
+		}
+		return output;
+	}
+	
 	public void deleteData(File file){
 		if(file.exists()){
 			file.delete();
@@ -114,7 +144,6 @@ public class Data
 			} 
 		} 
 		catch (Exception e) { 
-			System.out.println("复制整个文件夹内容操作出错"); 
 			e.printStackTrace(); 
 
 		} 
@@ -122,7 +151,6 @@ public class Data
 	}
 	public void deleteFolderFile(String filePath, boolean deleteThisPath)
 	 throws IOException {
-		 if (!TextUtils.isEmpty(filePath)) {
 			 File file = new File(filePath);
 			 if (file.isDirectory()) {// 处理目录
 				 File files[] = file.listFiles();
@@ -140,7 +168,7 @@ public class Data
 		      }
 			}
 		 }
-		 }
+		 
 	public void writeData(File file,String mes,boolean ifbr) throws FileNotFoundException, IOException{
 		FileOutputStream out_steam = new FileOutputStream(file, true);
 		if(ifbr){

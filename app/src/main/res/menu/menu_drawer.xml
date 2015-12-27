@@ -26,21 +26,35 @@
 					android:id="@+id/mbar"
 					android:icon="@drawable/mbar"
 					android:title="专栏"/>-->
-				<item
-					android:id="@+id/check"
-					android:icon="@drawable/check"
-					android:title="审核"/>
+			
 				<item
 					android:id="@+id/enj"
 					android:icon="@drawable/enjoy"
 					android:title="MCPE"/>	
+				
+			</menu>
+		</item>
+			<item
+					android:id="@+id/section"
+					android:icon="@drawable/mine"
+					android:title="小工具">
+					<menu>
 				<item
 					android:id="@+id/tool"
 					android:icon="@drawable/tool"
-					android:title="js模拟器"/>
-			</menu>
-
-		</item>
+					android:title="ModPE编译器"/>
+				<item
+					android:id="@+id/mcmanager"
+					android:icon="@drawable/mc_manager"
+					android:title="MCPE管理器"/>
+						<item
+							android:id="@+id/loadjs"
+							android:icon="@drawable/loadjs"
+							android:title="导入ModPE"/>
+						
+				</menu>
+			</item>
+		
 		<item
 			android:id="@+id/section"
 			android:icon="@drawable/mine"
@@ -54,10 +68,6 @@
 					android:id="@+id/about"
 					android:icon="@drawable/aboutus"
 					android:title="关于我们"/>
-				<item
-					android:id="@+id/look"
-					android:icon="@drawable/look"
-					android:title="使用条款"/>
 				<item
 					android:id="@+id/ret"
 					android:icon="@drawable/rept"
