@@ -8,13 +8,13 @@
 		app:showAsAction="ifRoom"
         android:icon="@drawable/search_new"
 	/>
-	
+	<!--
 	<item
         android:id="@+id/list_way"
 		android:title="排列方式"
 		app:showAsAction="ifRoom"
         android:icon="@drawable/sub"
 	/>
-	
+	-->
 
 </menu>
