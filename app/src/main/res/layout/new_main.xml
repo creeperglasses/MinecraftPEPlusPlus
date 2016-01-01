@@ -19,6 +19,7 @@
 			android:translationZ="10dp"
 			android:background="@color/toolbarcolor"
 			android:layout_height="112dp">
+
 			<android.support.design.widget.CollapsingToolbarLayout
 				android:id="@+id/collapsing_toolbar_layout"
 				android:layout_width="match_parent"
@@ -27,8 +28,7 @@
 				app:expandedTitleMarginStart="48dp"
 				android:fitsSystemWindows="true"
 				app:layout_scrollFlags="scroll|exitUntilCollapsed">
-				
-			
+
 				<android.support.v7.widget.Toolbar
 					android:id="@+id/toolbar"
 					android:layout_height="56dp"
@@ -38,27 +38,30 @@
 					app:layout_collapseMode="pin">
 
 				</android.support.v7.widget.Toolbar>
-</android.support.design.widget.CollapsingToolbarLayout>
-			
+
+			</android.support.design.widget.CollapsingToolbarLayout>
+
 		</android.support.design.widget.AppBarLayout>
-		
+
 		<android.support.v4.widget.SwipeRefreshLayout
 			android:id="@+id/swipe_container"
 			android:layout_width="match_parent"
 			app:layout_behavior="@string/appbar_scrolling_view_behavior"
 			android:layout_height="match_parent">
-			
-		<android.support.v7.widget.RecyclerView
-			android:id="@+id/recycler"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:scrollbars="vertical"
-			app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-		</android.support.v4.widget.SwipeRefreshLayout>
-		</android.support.design.widget.CoordinatorLayout>
 
-			
-			
+			<android.support.v7.widget.RecyclerView
+				android:id="@+id/recycler"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scrollbars="vertical"
+				app:layout_behavior="@string/appbar_scrolling_view_behavior"
+				android:paddingLeft="1dp"
+				android:paddingRight="1dp"/>
+
+		</android.support.v4.widget.SwipeRefreshLayout>
+
+	</android.support.design.widget.CoordinatorLayout>
+
 	<android.support.design.widget.CoordinatorLayout
 		android:id="@+id/layout"
 		android:layout_width="match_parent"

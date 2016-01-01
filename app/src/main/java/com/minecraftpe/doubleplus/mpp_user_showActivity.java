@@ -49,7 +49,7 @@ public class mpp_user_showActivity extends AppCompatActivity
 				} 
 			});
 		WebView webview = (WebView) findViewById(R.id.user_web);
-		webView.loadUrl("file:///android_asset/mainshow.html");
+		webView.loadUrl("file:///android_asset/mpp_user_show.html");
 	}
 	public void lodurl(final WebView webView, final String url) {
 		new Thread(new Runnable() {
