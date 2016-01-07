@@ -6,6 +6,7 @@ import android.view.*;
 import android.support.v4.app.*;
 import android.webkit.*;
 import java.io.*;
+import com.petebevin.markdown.*;
 
 public class con_pagea extends Fragment
 {
@@ -34,9 +35,17 @@ public class con_pagea extends Fragment
 	  WebView webview=(WebView) view.findViewById(R.id.con_web);
 		cviewActivity nma=(cviewActivity) getActivity();
 	 	 cpos=nma.cpos;
-		cname=data.getData(fs,cpos*6+6);
-		webview.loadUrl("http://www.helloworldcreeper.com/htmls/mppcon/show/"+cname+".html");
+		cname=data.getData(fs,cpos*10+7);
+		String dbase=decodeObject(cname);
+		String data="<style>img{max-width:100%;}</style>"+new MarkdownProcessor().markdown(dbase);
+		webview.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
+		
+		//webview.loadUrl("http://www.helloworldcreeper.com/htmls/mppcon/show/"+cname+".html");
 	  return view;
     }
-	
+	public String decodeObject(String a){
+		EncodeString es=new EncodeString("1234567890abcdef");
+		a=es.decode(a);		
+		return a;
+	}
 }

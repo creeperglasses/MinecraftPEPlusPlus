@@ -5,11 +5,11 @@ android {
     buildToolsVersion "21.1.0"
 
     defaultConfig {
-        applicationId "com.minecraftpe.doubleplus"
+        applicationId "org.codeui.mppupdatetool"
         minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
-        versionName "Beta 5"
+        versionName "UI Demo"
     }
     buildTypes {
         release {
@@ -21,8 +21,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile project(':library')
-	compile 'com.cocosw:query:0.2.2'
 	compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:cardview-v7:22.2.0'

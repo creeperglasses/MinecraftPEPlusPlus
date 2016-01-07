@@ -107,7 +107,7 @@ public class con_pageb extends Fragment
 		if(!fcv.exists()){
 			fcv.mkdirs();
 		}
-		cname=data.getData(fs,pos*6+6);
+		cname=data.getData(fs,pos*10+6);
 		cpos=pos;
 		File fp=new File("/storage/sdcard0/M++/data/con_view/"+cname+".txt");
 	if(!fp.exists()){

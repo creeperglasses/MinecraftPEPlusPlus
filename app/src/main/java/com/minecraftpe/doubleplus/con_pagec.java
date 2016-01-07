@@ -34,7 +34,7 @@ public class con_pagec extends Fragment
 		WebView webview=(WebView) view.findViewById(R.id.con_web);
 		cviewActivity nma=(cviewActivity) getActivity();
 		cpos=nma.cpos;
-		cname=data.getData(fs,cpos*6+6);
+		cname=data.getData(fs,cpos*10+6);
 		webview.loadUrl("http://www.helloworldcreeper.com/htmls/mppcon/new/"+cname+".html");
 		
 		return view;

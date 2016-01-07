@@ -117,8 +117,8 @@ public class searchActivity extends AppCompatActivity
 							String [] ss=s.split("\n");
 							for (int i = 0; i <= ss.length; i++) {
 								try{
-									if(ss[6*i].matches(reg)){
-									ConRecItem p=new ConRecItem(ss[6*i+1],ss[6*i]); listmain.add(p);
+									if(ss[10*i].matches(reg)){
+									ConRecItem p=new ConRecItem(ss[10*i+1],ss[10*i]); listmain.add(p);
 									String spos=String.valueOf(i);
 									Data data=new Data();
 									data.writeData(fl,spos+"\n",false);

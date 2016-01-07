@@ -364,7 +364,7 @@ new Thread(listadd).start();
 				String [] ss=s.split("\n");
 				for (int i = 0; i <= ss.length; i++) {
 					try{
-						ConRecItem p=new ConRecItem(ss[6*i+1],ss[6*i]); listmain.add(p);
+						ConRecItem p=new ConRecItem(ss[10*i+1],ss[10*i]); listmain.add(p);
 					}
 				
 					catch(ArrayIndexOutOfBoundsException e){

@@ -13,10 +13,11 @@ import android.webkit.*;
 import android.content.*;
 import android.net.*;
 import android.graphics.*;
+import android.support.v7.app.*;
 
 
 
-public class MainActivity extends Activity
+public class MainActivity extends AppCompatActivity
 {
     /** Called when the activity is first created. */
 	String snt=null;

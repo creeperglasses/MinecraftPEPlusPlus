@@ -54,8 +54,30 @@ public class userActivity extends AppCompatActivity
 			
 				handler.post(modTick);
 			}
+			
 		}.start();
+		
 		}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.user_menu, menu);
+		return true;
+
+	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		switch (item.getItemId()){
+		
+			default:
+
+				break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 	public void str_input(View view){
 		String it="1";
 		Intent intent = new Intent(userActivity.this,maininputActivity.class);
