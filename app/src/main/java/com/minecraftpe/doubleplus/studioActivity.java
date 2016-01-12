@@ -126,7 +126,11 @@ public class studioActivity extends AppCompatActivity
 							startActivity(intentloadjs);
 
 							break;	
-			
+						case R.id.sc:
+							Intent intentsc = new Intent(studioActivity.this,sharActivity.class);
+							startActivity(intentsc);
+
+							break;	
 	
 							default:
 							

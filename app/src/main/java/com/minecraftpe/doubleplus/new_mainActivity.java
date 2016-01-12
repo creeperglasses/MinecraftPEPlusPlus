@@ -134,6 +134,11 @@ public class new_mainActivity extends AppCompatActivity
 							startActivity(intentloadjs);
 
 							break;	
+						case R.id.sc:
+							Intent intentsc = new Intent(new_mainActivity.this,sharActivity.class);
+							startActivity(intentsc);
+							finish();
+							break;	
 							
 						default:
 						

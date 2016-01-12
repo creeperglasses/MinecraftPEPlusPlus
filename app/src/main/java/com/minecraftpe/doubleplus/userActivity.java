@@ -1,18 +1,19 @@
 package com.minecraftpe.doubleplus;
 
-
-import android.app.*;
 import android.os.*;
 import android.view.*;
-import android.support.v4.widget.*;
-import android.support.v7.app.*;
-import android.support.v7.widget.*;
-import android.net.*;
-import android.support.design.widget.*;
+import android.content.*;
+import android.view.View.*;
 import android.graphics.*;
+import java.util.*;
+import android.support.v4.widget.*;
+import android.support.design.widget.*;
+import android.support.v7.app.*;
+import android.support.v4.view.*;
+import android.support.v7.widget.*;
+import android.widget.TextView;
 import android.widget.ImageView;
 import java.io.*;
-import android.content.*;
 
 public class userActivity extends AppCompatActivity
 {
@@ -22,6 +23,13 @@ public class userActivity extends AppCompatActivity
 	
 	
 	private Handler handler=null;
+	private TextView intro;
+	private TextView sign;
+	public String st;
+	public String it;
+	private File user;
+	private String up;
+	FTP ftp = new FTP("ftp39.idcay.com", "hellowotl", "F5B385C8B1e8dc");
 	@Override
     public void onCreate(Bundle savedInstanceState)
 	{
@@ -56,7 +64,32 @@ public class userActivity extends AppCompatActivity
 			}
 			
 		}.start();
+		sign=(TextView) findViewById(R.id.sign);
+		intro=(TextView) findViewById(R.id.introduction);
 		
+		Data data=new Data();
+		File fuser = new File("/storage/sdcard0/M++/user/user.txt");	
+		up=data.getAllData(fuser);
+		System.out.println(up);
+		user=new File(up);
+		if(data.getLine(user)==3){
+			try
+			{
+				data.writeData(user, "编辑你的个性签名"+"\n", false);
+				data.writeData(user, "编辑你的个人简介"+"\n", false);
+				new Thread(update).start();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+			
+		
+		}
+			sign.setText(data.getData(user,3));
+			intro.setText(data.getData(user,4));
+			st=sign.getText().toString();
+			it=intro.getText().toString();
 		}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,7 +104,11 @@ public class userActivity extends AppCompatActivity
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()){
-		
+		case R.id.edit :
+				Intent intent = new Intent(userActivity.this,user_settingsActivity.class);
+				startActivity(intent);
+				
+			break;
 			default:
 
 				break;
@@ -103,4 +140,40 @@ public class userActivity extends AppCompatActivity
 		 
 			}
 			};
+			public void view_sign(View view){
+				AlertDialog dialog=(new AlertDialog.Builder(userActivity.this)).setMessage(st)
+					.setPositiveButton("Ok",new DialogInterface.OnClickListener(){
+						@Override
+						public void onClick(DialogInterface p1,int p2){
+							
+						}
+					})
+					.create();
+					dialog.show();
+			}	
+			
+			public void view_intro(View view){
+				AlertDialog dialog=(new AlertDialog.Builder(userActivity.this)).setMessage(it)
+					.setPositiveButton("Ok",new DialogInterface.OnClickListener(){
+						@Override
+						public void onClick(DialogInterface p1,int p2){
+
+						}
+					})
+					.create();
+				dialog.show();
+			}
+	Runnable update = new Runnable(){
+		@Override        
+		public void run() { 
+			try
+			{
+				ftp.openConnect();
+				up=user.getName();
+			ftp.ftpUpload("ftp39.idcay.com", "21", "hellowotl", "F5B385C8B1e8dc", "/hellowotl/web/signed/", "/storage/sdcard0/M++/user/sever/", up);
+			}
+			catch (IOException e)
+			{}
+		}
+		};
 		}

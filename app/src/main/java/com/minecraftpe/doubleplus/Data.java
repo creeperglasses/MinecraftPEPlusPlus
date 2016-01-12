@@ -1,5 +1,6 @@
 package com.minecraftpe.doubleplus;
 import java.io.*;
+import android.util.*;
 
 public class Data
 {
@@ -179,5 +180,127 @@ public class Data
 			out_steam.write(mes.getBytes("UTF-8"));
 		}
 	}
+	public boolean changeLine(String path,String newpath,int line,String text) {
+	File fp=new File(path);
+	File fn=new File(newpath);
+	if(fn.exists()){
+		Log.i("Data", "已经存在");
+		return false;
+	}
+	else{
+		try
+		{
+			fn.createNewFile();
+			FileReader fr=new FileReader(fp);
+			BufferedReader br=new BufferedReader(fr);
+
+			String temp=null;
+			String s="";
+		
+				while ((temp = br.readLine()) != null)
+				{
+					s += temp + "\n";
+				}	
+			String [] ss=s.split("\n");
+			for (int i = 0; i < ss.length; i++) {
+				if(line!=i+1){
+					
+						writeData(fn,ss[i]+"\n",false);	
+					
+						
+				}
+				else{				
+					
+						writeData(fn,text+"\n",false);	
+					
+				}
+			}
+			fp.delete();
+			copyFile(newpath,path);
+			fn.delete();
+			}
+		catch (IOException e)
+		{
+			e.printStackTrace(); 	
+			return false;
+		}	
+			}
+			return true;
+		}
+		
+	public int getLine(File file){
+		try
+		{
+			
+				FileReader fr=new FileReader(file);
+			
+			
+			BufferedReader br=new BufferedReader(fr);
+
+			String temp=null;
+			String s="";
+			
+					while ((temp = br.readLine()) != null)
+					{
+						s += temp + "\n";
+					}
+			
+			String [] ss=s.split("\n");
+			return ss.length+1;
+			}
+			
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		return 0;	
 		 }
+	public boolean deleteLine(String path,String newpath,int line) {
+		File fp=new File(path);
+		File fn=new File(newpath);
+		if(fn.exists()){
+			Log.i("Data", "已经存在");
+			return false;
+		}
+		else{
+			try
+			{
+				fn.createNewFile();
+				FileReader fr=new FileReader(fp);
+				BufferedReader br=new BufferedReader(fr);
+
+				String temp=null;
+				String s="";
+
+				while ((temp = br.readLine()) != null)
+				{
+					s += temp + "\n";
+				}	
+				String [] ss=s.split("\n");
+				for (int i = 0; i < ss.length; i++) {
+					if(line!=i+1){
+
+						writeData(fn,ss[i]+"\n",false);	
+
+
+					}
+					else{				
+
+
+					}
+				}
+				fp.delete();
+				copyFile(newpath,path);
+				fn.delete();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace(); 	
+				return false;
+			}	
+		}
+		return true;
+	} 
+		 }
+		 
 
