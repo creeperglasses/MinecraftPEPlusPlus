@@ -55,7 +55,7 @@ public class new_mainActivity extends AppCompatActivity
 		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 		displayWidth = displayMetrics.widthPixels;
 		displayHeight = displayMetrics.heightPixels;
-		final int rpos=displayWidth/320;
+		final int rpos=2;
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setNavigationIcon(R.drawable.list);
 		CollapsingToolbarLayout mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout);		
@@ -169,7 +169,7 @@ public class new_mainActivity extends AppCompatActivity
 								data.writeData(fp,cpo,false);
 							}
 							
-							catch (IOException e)
+							catch (Exception e)
 							{}
 						Intent intent = new Intent(new_mainActivity.this, conActivity.class);
 						intent.putExtra("pos", position);
@@ -190,7 +190,7 @@ public class new_mainActivity extends AppCompatActivity
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				initData();
+				
 				RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler);
 				recyclerView.setLayoutManager(new StaggeredGridLayoutManager(rpos,StaggeredGridLayoutManager.VERTICAL));
 				recyclerView.setAdapter(adapter);
@@ -334,7 +334,6 @@ new Thread(listadd).start();
 		@Override        
 		public void run() {
 
-			File file=new File("/storage/sdcard0/M++/data/mpp_con.txt");
 			File fs=new File("/storage/sdcard0/M++/data/fs_con.txt");
 		if(fs.exists()){
 			fs.delete();
@@ -342,15 +341,11 @@ new Thread(listadd).start();
 			try
 			{
 				ftp.openConnect();
-				ftp.download("/hellowotl/web/htmls/","mpp_con.txt","/storage/sdcard0/M++/data/");
-				
-			}
-			catch (IOException e)
-			{}
-			try
-			{
-
-				FileReader fr=new FileReader(file);
+				String tlist=ftp.readFile("/hellowotl/web/htmls/mpp_con.txt");
+				Data data=new Data();
+				data.writeData(fs,tlist,false);
+			
+				FileReader fr=new FileReader(fs);
 
 				BufferedReader br=new BufferedReader(fr);
 
@@ -362,7 +357,7 @@ new Thread(listadd).start();
 						s += temp + "\n";
 					}
 				}
-				catch (IOException e)
+				catch (Exception e)
 				{
 					e.printStackTrace(); 	
 				}
@@ -378,12 +373,10 @@ new Thread(listadd).start();
 					
 				}
 			
-				Data data=new Data();
-				data.copyFile("/storage/sdcard0/M++/data/mpp_con.txt","/storage/sdcard0/M++/data/fs_con.txt");
-				file.delete();
+				
 			}
 
-			catch (FileNotFoundException e)
+			catch (Exception e)
 			{
 				//e.printStackTrace(); 	
 			}

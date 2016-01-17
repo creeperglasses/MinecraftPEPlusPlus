@@ -32,14 +32,18 @@ public class con_pagea extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view= inflater.inflate(R.layout.con_pagea,container,false );
-	  WebView webview=(WebView) view.findViewById(R.id.con_web);
+	try{
+	   WebView webview=(WebView) view.findViewById(R.id.con_web);
 		cviewActivity nma=(cviewActivity) getActivity();
 	 	 cpos=nma.cpos;
 		cname=data.getData(fs,cpos*10+7);
 		String dbase=decodeObject(cname);
 		String data="<style>img{max-width:100%;}</style>"+new MarkdownProcessor().markdown(dbase);
 		webview.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
-		
+		}
+		catch(Exception e){
+			
+		}
 		//webview.loadUrl("http://www.helloworldcreeper.com/htmls/mppcon/show/"+cname+".html");
 	  return view;
     }

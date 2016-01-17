@@ -14,6 +14,9 @@ import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPClientConfig;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
+import java.io.BufferedReader;
+import java.text.*;
+import java.io.InputStreamReader;
 
 public class FTP {
     private String hostName;
@@ -219,5 +222,71 @@ public class FTP {
 		}
 		return returnMessage;
 	}
+	
+	/**
+	   * @param path
+	   * @return function:读取指定目录下的文件名
+	   * @throws IOException
+	   */
+	public List<String> getFileList(String path) {
+		List<String> fileLists = new ArrayList<String>();
+		// 获得指定目录下所有文件名
+		FTPFile[] ftpFiles = null;
+		try {
+			ftpFiles = ftpClient.listFiles(path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		for (int i = 0; ftpFiles != null && i < ftpFiles.length; i++) {
+			FTPFile file = ftpFiles[i];
+			if (file.isFile()) {
+				fileLists.add(file.getName());
+			}
+		}
+		return fileLists;
+	}
+	
+	/**
+	   * @param fileName
+	   * @return function:从服务器上读取指定的文件
+	   * @throws ParseException
+	   * @throws IOException
+	   */
+	public String readFile(String file){
+		InputStream ins = null;
+		StringBuilder builder = null;
+		try {
+			// 从服务器上读取指定的文件
+			ins = ftpClient.retrieveFileStream(file);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(ins, "UTF-8"));
+			String line;
+			builder = new StringBuilder(150);
+			while ((line = reader.readLine()) != null) {
+				System.out.println(line);
+				builder.append(line+"\n");
+			}
+			reader.close();
+			if (ins != null) {
+				ins.close();
+			}
+			// 主动调用一次getReply()把接下来的226消费掉. 这样做是可以解决这个返回null问题
+			ftpClient.getReply();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return builder.toString();
+	}
 
+	/**
+	   * @param fileName function:删除文件
+	   */
+	public void deleteFile(String fileName) {
+		try {
+			ftpClient.deleteFile(fileName);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
 }

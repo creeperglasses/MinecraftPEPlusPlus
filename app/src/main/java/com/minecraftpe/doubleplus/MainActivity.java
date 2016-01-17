@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity
 		File fdata = new File("/storage/sdcard0/M++/data");	
 		File fdataf = new File("/storage/sdcard0/M++/data/应用数据1.txt");
 		File ftime = new File("/storage/sdcard0/M++/data/打开应用次数.txt");
+		File fcv = new File("/storage/sdcard0/M++/data/con_view/");
+		
 		String versionName=null;
 		try
 		{
@@ -66,6 +68,9 @@ public class MainActivity extends AppCompatActivity
 			}
 			if(!fdata.exists()){
 				fdata.mkdirs();
+			}
+			if(!fcv.exists()){
+				fcv.mkdirs();
 			}
 			if(!fdataf.exists()){
 				fdataf.createNewFile();

@@ -42,22 +42,26 @@ public class conActivity extends AppCompatActivity
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 			getWindow().setStatusBarColor(getResources().getColor(R.color.holo_blue_bright));}
 		setContentView(R.layout.con);
+		try{
 		bg= (ImageView) findViewById(R.id.con_show );
 		titlemain= (TextView) findViewById(R.id.con_maintitle);
 		by= (TextView) findViewById(R.id.con_by);
 		intro= (TextView) findViewById(R.id.con_int);
 		Intent intent= getIntent();
 	    pos = intent.getIntExtra("pos", 0);
-		String picurl=data.getData(fs,pos*6+2);
-		String titletex=data.getData(fs,pos*6+1);
-		String bytex=data.getData(fs,pos*6+3);
-		String mtex=data.getData(fs,pos*6+4);
-		url=data.getData(fs,pos*6+5);
+		String picurl=data.getData(fs,pos*10+2);
+		String titletex=data.getData(fs,pos*10+1);
+		String bytex=data.getData(fs,pos*10+3);
+		String mtex=data.getData(fs,pos*10+4);
+		url=data.getData(fs,pos*10+5);
 		titlemain.setText(titletex);
 		by.setText(bytex);
 		intro.setText(mtex);
 		loadImage(bg,picurl);
-		
+		}
+		catch(Exception e){
+			
+		}
 		}
 	@SuppressWarnings("deprecation")
     @Nullable

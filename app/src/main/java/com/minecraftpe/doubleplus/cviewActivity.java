@@ -1,6 +1,5 @@
 package com.minecraftpe.doubleplus;
 
-import android.app.*;
 import android.os.*;
 import android.view.*;
 import android.support.v4.widget.*;
@@ -27,6 +26,7 @@ public class cviewActivity extends AppCompatActivity
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 			getWindow().setStatusBarColor(getResources().getColor(R.color.holo_blue_bright));}
 		setContentView(R.layout.cview);
+		try{
 		final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
 		ConPageAdapter adapter=new ConPageAdapter(getSupportFragmentManager());
 		viewPager.setAdapter(adapter);
@@ -57,6 +57,18 @@ public class cviewActivity extends AppCompatActivity
 			}
 		catch(IllegalArgumentException e){
 
+		}
+		}
+		catch(Exception e){
+			AlertDialog dialog=(new AlertDialog.Builder(cviewActivity.this)).setMessage(e.toString())
+				.setPositiveButton("Ok",new DialogInterface.OnClickListener(){
+					@Override
+					public void onClick(DialogInterface p1,int p2){
+
+					}
+				})
+				.create();
+			dialog.show();	
 		}
 		}
 		public void send(View view){

@@ -50,6 +50,7 @@ public class con_pageb extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		view= inflater.inflate(R.layout.con_pageb,container,false );
+		try{
 		cviewActivity nma=(cviewActivity) getActivity();
 		cpos=nma.cpos;
 		System.out.println(nma.cpos);
@@ -67,12 +68,13 @@ public class con_pageb extends Fragment
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				initData();
+				
 				recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
 				recyclerView.setAdapter(adapter);
 				load.postDelayed(this, 15000);
+				initData();
 			}};
-		load.postDelayed(task, 15000);
+		load.postDelayed(task, 150000);
 
 		final SwipeRefreshLayout mSwipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
 
@@ -81,7 +83,6 @@ public class con_pageb extends Fragment
 				@Override
 				public void onRefresh() {
 					//重新刷新页面
-					initData();
 					recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
 					recyclerView.setAdapter(adapter);
 					new Handler().postDelayed(new Runnable() {
@@ -95,7 +96,10 @@ public class con_pageb extends Fragment
 		mSwipeLayout.setColorSchemeResources(R.color.holo_blue_bright,
 											 R.color.holo_blue_bright, R.color.holo_blue_bright,
 											 R.color.holo_blue_bright);
-											 
+				}
+				catch(Exception e){
+					
+				}
 		return view;
     }
 

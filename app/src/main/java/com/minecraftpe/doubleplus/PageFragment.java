@@ -33,6 +33,7 @@ public class PageFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		final View view = inflater.inflate(R.layout.fragment_page,container,false);
+		try{
 		final RecycleItemClickListener itemClickListener=new RecycleItemClickListener() {
 			@Override
 			public void onItemClick(View view, int position) {
@@ -74,16 +75,12 @@ public class PageFragment extends Fragment {
 			case 1:
 				RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.recycler);
 				recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
-				initStudio();
-
 				NewsRecAdapter adapter=new NewsRecAdapter(listmain,itemClickListener);
 				recyclerView.setAdapter(adapter);
 				break;
 			case 2:
 				recyclerView= (RecyclerView) view.findViewById(R.id.recycler);
 				recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
-				initPro();
-
 				adapter=new NewsRecAdapter(listmain,itemClickListener);
 				recyclerView.setAdapter(adapter);
 				break;
@@ -150,8 +147,10 @@ public class PageFragment extends Fragment {
 		mSwipeLayout.setColorSchemeResources(R.color.holo_blue_bright,
 											 R.color.holo_blue_bright, R.color.holo_blue_bright,
 											 R.color.holo_blue_bright);
-
-		
+}
+		catch(Exception e){
+			
+		}
 		return view;
 		
 	}
@@ -171,13 +170,16 @@ public class PageFragment extends Fragment {
 		public void run() {
 
 			File file=new File("/storage/sdcard0/M++/data/news.txt");
+			
 			try
 			{
 				ftp.openConnect();
-				ftp.download("/hellowotl/web/htmls/mppshow/","news.txt","/storage/sdcard0/M++/data/");
-
+				String tlist=ftp.readFile("/hellowotl/web/htmls/mppshow/news.txt");
+				Data data=new Data();
+				data.writeData(file,tlist,false);
+				
 			}
-			catch (IOException e)
+			catch (Exception e)
 			{}
 			try
 			{
@@ -206,7 +208,7 @@ public class PageFragment extends Fragment {
 					}
 				}
 			}
-			catch (FileNotFoundException e)
+			catch (Exception e)
 			{
 				//e.printStackTrace(); 	
 			}
@@ -217,13 +219,15 @@ public class PageFragment extends Fragment {
 		public void run() {
 
 			File file=new File("/storage/sdcard0/M++/data/studio.txt");
+			
 			try
 			{
-				ftp.openConnect();
-				ftp.download("/hellowotl/web/htmls/mppshow/","studio.txt","/storage/sdcard0/M++/data/");
-
+				String tlist=ftp.readFile("/hellowotl/web/htmls/mppshow/studio.txt");
+				Data data=new Data();
+				data.writeData(file,tlist,false);
+				
 			}
-			catch (IOException e)
+			catch (Exception e)
 			{}
 			try
 			{
@@ -252,11 +256,12 @@ public class PageFragment extends Fragment {
 					}
 				}
 			}
-			catch (FileNotFoundException e)
+			catch (Exception e)
 			{
 				//e.printStackTrace(); 	
 			}
 		}
 	};
+
 }
 

@@ -31,7 +31,7 @@
 					android:fitsSystemWindows="true"
 					android:id="@+id/con_show"/>
 
-				<TextView
+				<com.minecraftpe.doubleplus.ConTextView
 					android:layout_height="wrap_content"
 					android:text="loading..."
 					android:layout_width="wrap_content"
@@ -39,7 +39,10 @@
 					android:textColor="#FAFAFA"
 					android:layout_gravity="bottom|left"
 					android:layout_margin="16dp"
-					android:id="@+id/con_maintitle"/>
+					android:id="@+id/con_maintitle"
+					android:ellipsize="marquee"
+					android:marqueeRepeatLimit="marquee_forever"
+					android:singleLine="true"/>
 
 			</FrameLayout>
 

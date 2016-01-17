@@ -31,12 +31,16 @@ public class con_pagec extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view= inflater.inflate(R.layout.con_pagec,container,false );
+		try{
 		WebView webview=(WebView) view.findViewById(R.id.con_web);
 		cviewActivity nma=(cviewActivity) getActivity();
 		cpos=nma.cpos;
 		cname=data.getData(fs,cpos*10+6);
 		webview.loadUrl("http://www.helloworldcreeper.com/htmls/mppcon/new/"+cname+".html");
-		
+		}
+		catch(Exception e){
+			
+		}
 		return view;
     }
 

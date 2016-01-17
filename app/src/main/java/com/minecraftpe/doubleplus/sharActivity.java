@@ -244,7 +244,7 @@ public class sharActivity extends AppCompatActivity
 		@Override        
 		public void run() {
 
-			File file=new File("/storage/sdcard0/M++/data/mpp_shar.txt");
+			
 			File fs=new File("/storage/sdcard0/M++/data/fs_shar.txt");
 			if(fs.exists()){
 				fs.delete();
@@ -252,15 +252,17 @@ public class sharActivity extends AppCompatActivity
 			try
 			{
 				ftp.openConnect();
-				ftp.download("/hellowotl/web/htmls/","mpp_shar.txt","/storage/sdcard0/M++/data/");
-
+				String tlist=ftp.readFile("/hellowotl/web/htmls/mpp_shar.txt");
+				Data data=new Data();
+				data.writeData(fs,tlist,false);
+				
 			}
 			catch (IOException e)
 			{}
 			try
 			{
 
-				FileReader fr=new FileReader(file);
+				FileReader fr=new FileReader(fs);
 
 				BufferedReader br=new BufferedReader(fr);
 
@@ -295,9 +297,7 @@ public class sharActivity extends AppCompatActivity
 
 				}
 
-				Data data=new Data();
-				data.copyFile("/storage/sdcard0/M++/data/mpp_shar.txt","/storage/sdcard0/M++/data/fs_shar.txt");
-				file.delete();
+			
 			}
 
 			catch (FileNotFoundException e)
